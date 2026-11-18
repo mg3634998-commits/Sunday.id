@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sunday.id</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+ <h1>Sunday Simulator<small>Layangan pencari uang</small></h1>
+ <div class="hr"><button class="chip" id="snd" aria-label="Nyalakan/matikan suara" title="Suara">🔊</button>
+ <div class="bal"><span>SALDO</span><b id="bal">Rp1.000.000</b></div></div>
+</header>
+
+<div class="stage" id="stage">
+ <canvas id="cv"></canvas>
+ <div class="hud"><div id="mult">1,00x</div><div id="msg">MENUNGGU RONDE</div></div>
+ <div class="float" id="fl"></div>
+</div>
+
+<div class="panel">
+ <div class="row" style="margin-bottom:8px"><label>Taruhan</label>
+  <button class="chip" data-b="10000">Rp10.000</button>
+  <button class="chip on" data-b="50000">Rp50.000</button>
+  <button class="chip" data-b="100000">Rp100.000</button>
+  <button class="chip" data-b="250000">Rp250.000</button>
+ </div>
+ <div class="row" style="margin-bottom:8px"><label>Taruhan manual</label>
+  <input type="number" id="manual" min="1000" step="1000" inputmode="numeric" placeholder="mis. 75000">
+  <button class="chip" id="half">½</button><button class="chip" id="dbl">2×</button><button class="chip" id="maxb">Maks</button>
+  <span id="mhint" class="mhint"></span>
+ </div>
+ <div class="row"><label>Cash out otomatis</label>
+  <input type="number" id="auto" min="1.1" step="0.1" placeholder="mis. 2.0"> <span style="font-size:.75rem;color:var(--mute)">x (kosongkan untuk manual)</span>
+ </div>
+ <button id="go">PASANG TARUHAN</button>
+ <button class="chip topup" id="topup">Isi ulang saldo latihan Rp1.000.000</button>
+</div>
+
+<div class="panel"><div class="ph"><b>Hasil ronde terakhir</b><span>titik layangan putus</span></div><div class="hist" id="hist"></div></div>
+
+<div class="panel"><div class="ph"><b>Riwayat taruhan</b><button class="chip sm" id="clr">Hapus</button></div><div class="log" id="log"></div></div>
+
+<div class="panel stats">
+ <div>Ronde dimainkan<b id="sR">0</b></div>
+ <div>Total dipasang<b id="sW">Rp0</b></div>
+ <div>Hasil bersih<b id="sN">Rp0</b></div>
+ <div>Nilai harapan<b>−3%</b></div>
+</div>
+
+<p class="note">Yang takut jangan ikut, yang ikut jangan takut</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
